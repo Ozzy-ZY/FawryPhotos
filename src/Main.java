@@ -7,16 +7,16 @@ public class Main {
 
         // Upload some Egyptian photos
         manager.uploadPhoto(new Photo(1, "pyramids.jpg", LocalDate.of(2023, 3, 10),
-                "Giza", Set.of("pyramids", "history", "egypt", "tourism")));
+                "Giza", Set.of("pyramids", "history", "egypt", "tourism"), new Coordinate(50,50)));
 
         manager.uploadPhoto(new Photo(2, "nile.jpg", LocalDate.of(2023, 4, 22),
-                "Cairo", Set.of("nile", "river", "sunset", "egypt")));
+                "Cairo", Set.of("nile", "river", "sunset", "egypt"), new Coordinate(12,15)));
 
         manager.uploadPhoto(new Photo(3, "mosque.jpg", LocalDate.of(2023, 4, 22),
-                "Cairo", Set.of("mosque", "islamic", "architecture", "egypt")));
+                "Cairo", Set.of("mosque", "islamic", "architecture", "egypt"), new Coordinate(20,20)));
 
         manager.uploadPhoto(new Photo(4, "museum.jpg", LocalDate.of(2023, 5, 15),
-                "Cairo", Set.of("museum", "antiquities", "egypt", "pharaohs")));
+                "Cairo", Set.of("museum", "antiquities", "egypt", "pharaohs"), new Coordinate(20,30)));
 
         // Search by single tag
         System.out.println("Photos with tag 'egypt':");

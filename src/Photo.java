@@ -1,20 +1,22 @@
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
-
 public class Photo {
-    private int id;
+    private final int id;
     private String path;
-    private LocalDate date;
-    private String locationName;
+    private final LocalDate date;
     private HashSet<String> tags;
+    private final Coordinate coordinate;
 
-    public Photo(int id, String path, LocalDate date, String locationName, Set<String> tags) {
+    public Photo(int id, String path, LocalDate date, String locationName, Set<String> tags, Coordinate coordinate) {
         this.id = id;
         this.path = path;
         this.date = date;
-        this.locationName = locationName;
         this.tags = new HashSet<>(tags);
+        this.coordinate = coordinate;
+    }
+    public Coordinate getCoordinate() {
+        return coordinate;
     }
     public void AddTag(String tag) {
         tags.add(tag);
@@ -38,14 +40,6 @@ public class Photo {
         return date;
     }
 
-    public String getLocationName() {
-        return locationName;
-    }
-
-    public void setLocationName(String locationName) {
-        this.locationName = locationName;
-    }
-
     public Set<String> getTags() {
         return tags;
     }
@@ -56,6 +50,6 @@ public class Photo {
 
     @Override
     public String toString() {
-        return String.format("Photo %d, %s, %s, %s\n Tags: %s", id, path, date, locationName, tags.toString());
+        return String.format("Photo %d, %s, %s,\n Tags: %s", id, path, date, tags.toString());
     }
 }
