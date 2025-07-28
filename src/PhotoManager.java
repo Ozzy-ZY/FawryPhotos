@@ -6,7 +6,8 @@ public class PhotoManager implements IPhotoManager {
     private HashMap<String, CityZone> cities;
     private TreeMap<LocalDate, ArrayList<Photo>> dateIndex;
     // I can also use a HashMap instead of the TreeMap to get better performance
-    // but I used the b tree as it's the most used in DBs
+    // but I used a tree Index to not balance the memory usage as the Hashmap would use more memory for
+    // it's underlying array as the allocated size increases by powers of 2 which can be inefficient
     public PhotoManager() {
         this.photos = new ArrayList<>();
         this.cities = new HashMap<>();
