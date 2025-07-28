@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.Locale;
 import java.util.Set;
 
 public class Main {
@@ -21,7 +22,9 @@ public class Main {
         // Search by single tag
         System.out.println("Photos with tag 'egypt':");
         manager.searchByTag("egypt").forEach(System.out::println);
-
+        System.out.println("Photos between Dates:");
+        manager.getPhotosFromToDate(LocalDate.of(2023,3,10), LocalDate.of(2023,4,22))
+                .forEach(System.out::println);
         // Search by date
         System.out.println("Photos taken on 2023-04-22:");
         manager.searchByDate(LocalDate.of(2023, 4, 22)).forEach(System.out::println);
